@@ -235,15 +235,15 @@ jsonrpc_client.py → HTTP → jsonrpc_server.py → Protocol → Routing → me
 
 ```mermaid
 graph TD
-    A[Client Application] --> B[JSONRPCClient.call_method()]
-    B --> C[HTTP POST /jsonrpc]
+    A[Client Application] --> B["JSONRPCClient.call_method()"]
+    B --> C["HTTP POST /jsonrpc"]
     C --> D[Flask Route Handler]
     D --> E[JSON-RPC Parser]
     E --> F[Method Router]
     F --> G{Method Name?}
-    G -->|calculate_tax| H[TaxService.calculate_tax()]
-    G -->|create_user| I[UserService.create_user()]
-    G -->|add| J[CalculationService.add()]
+    G -->|calculate_tax| H["TaxService.calculate_tax()"]
+    G -->|create_user| I["UserService.create_user()"]
+    G -->|add| J["CalculationService.add()"]
     H --> K[Business Logic Execution]
     I --> K
     J --> K
@@ -349,7 +349,7 @@ rest_client.py → GET/POST/PUT → rest_server.py → resources.py → methods.
 
 ```mermaid
 graph TD
-    A[Client Application] --> B[RESTClient._make_request()]
+    A[Client Application] --> B["RESTClient._make_request()"]
     B --> C[HTTP Method + URL]
     C --> D{HTTP Method}
     D -->|GET| E[Flask GET Route]
@@ -504,8 +504,8 @@ graph TD
     end
     
     subgraph "REST API Request"
-        RR1[POST /api/tax-calculations]
-        RR2[Content-Type: application/json]
+        RR1["POST /api/tax-calculations"]
+        RR2["Content-Type: application/json"]
         RR3["{"]
         RR4["  \"income\": 50000,"]
         RR5["  \"deductions\": 5000"]
@@ -513,8 +513,8 @@ graph TD
     end
     
     subgraph "REST API Response"
-        RS1[HTTP 201 Created]
-        RS2[Content-Type: application/json]
+        RS1["HTTP 201 Created"]
+        RS2["Content-Type: application/json"]
         RS3["{"]
         RS4["  \"tax_owed\": 8500,"]
         RS5["  \"calculation_id\": \"uuid\","]
