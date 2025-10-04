@@ -483,44 +483,44 @@ graph TD
 ```mermaid
 graph TD
     subgraph "JSON-RPC Request"
-        JR1["{"]
-        JR2["  \"jsonrpc\": \"2.0\","]
-        JR3["  \"method\": \"calculate_tax\","]
-        JR4["  \"params\": {\"income\": 50000},"]
-        JR5["  \"id\": 1"]
-        JR6["}"]
+        JR1['{']
+        JR2['  "jsonrpc": "2.0",']
+        JR3['  "method": "calculate_tax",']
+        JR4['  "params": {"income": 50000},']
+        JR5['  "id": 1']
+        JR6['}']
     end
     
     subgraph "JSON-RPC Response"
-        JS1["{"]
-        JS2["  \"jsonrpc\": \"2.0\","]
-        JS3["  \"result\": {"]
-        JS4["    \"tax_owed\": 8500,"]
-        JS5["    \"calculation_id\": \"uuid\","]
-        JS6["    \"calculated_at\": \"timestamp\""]
-        JS7["  },"]
-        JS8["  \"id\": 1"]
-        JS9["}"]
+        JS1['{']
+        JS2['  "jsonrpc": "2.0",']
+        JS3['  "result": {']
+        JS4['    "tax_owed": 8500,']
+        JS5['    "calculation_id": "uuid",']
+        JS6['    "calculated_at": "timestamp"']
+        JS7['  },']
+        JS8['  "id": 1']
+        JS9['}']
     end
     
     subgraph "REST API Request"
         RR1["POST /api/tax-calculations"]
         RR2["Content-Type: application/json"]
-        RR3["{"]
-        RR4["  \"income\": 50000,"]
-        RR5["  \"deductions\": 5000"]
-        RR6["}"]
+        RR3['{']
+        RR4['  "income": 50000,']
+        RR5['  "deductions": 5000']
+        RR6['}']
     end
     
     subgraph "REST API Response"
         RS1["HTTP 201 Created"]
         RS2["Content-Type: application/json"]
-        RS3["{"]
-        RS4["  \"tax_owed\": 8500,"]
-        RS5["  \"calculation_id\": \"uuid\","]
-        RS6["  \"calculated_at\": \"timestamp\","]
-        RS7["  \"_links\": {\"self\": \"/api/...\"}"]
-        RS8["}"]
+        RS3['{']
+        RS4['  "tax_owed": 8500,']
+        RS5['  "calculation_id": "uuid",']
+        RS6['  "calculated_at": "timestamp",']
+        RS7['  "_links": {"self": "/api/..."}']
+        RS8['}']
     end
     
     style JR1 fill:#e3f2fd
